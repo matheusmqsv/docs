@@ -1,0 +1,1 @@
+export async function retry<T>(fn: ()=>Promise<T>, { retries=3, baseMs=300, factor=2 }: {retries?:number, baseMs?:number, factor?:number} = {}): Promise<T> { let last:any; for (let i=0;i<=retries;i++){ try { return await fn() } catch(e){ last = e } const wait = baseMs * Math.pow(factor, i); await new Promise(r=>setTimeout(r, wait)) } throw last }

@@ -1,0 +1,14 @@
+{
+  "preparar_dados": {
+    "path": "scripts/preparar_dados.py",
+    "runtime": "python"
+  },
+  "validar_backend": {
+    "path": "scripts/validar_backend.ts",
+    "runtime": "node"
+  },
+  "coletar_dumps": {
+    "path": "scripts/coletar_dumps.sh",
+    "runtime": "bash"
+  }
+}

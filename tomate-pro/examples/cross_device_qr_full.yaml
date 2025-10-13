@@ -1,0 +1,21 @@
+name: Login cruzado via QR (Web → Mobile)
+tags: [cross-device, deeplink, qr, e2e]
+context:
+  sessions:
+    web: { target: web, device: "Desktop Chrome", url: "https://app.exemplo.com/" }
+    mobile:
+      target: android
+      device: "Pixel 8"
+      appId: "com.exemplo.app"
+      mobile: { ensureColdStart: true, autoGrantPermissions: true }
+variables: { usuario: "maria@example.com" }
+steps:
+  - [web] Acesse a página {{url}}
+  - [web] Aguarde até ver "Entrar pelo celular"
+  - [web] Toque em "Entrar pelo celular"
+  - [web] Aguarde até ver "Escaneie o QR"
+  - [web] Capture o QR Code exibido e salve o link como "dl"
+  - [mobile] Abra o deep link {{dl}}
+  - [mobile] Aguarde até ver "Login via QR"
+  - [mobile] Toque em "Confirmar"
+  - [web] Aguarde até ver "Autenticado no app"

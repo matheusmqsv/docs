@@ -1,0 +1,1 @@
+import { JSONPath } from 'jsonpath-plus'; export function extractByJSONPath(obj:any, path:string): any { try { const res = JSONPath({ path, json: obj }); return Array.isArray(res) ? res[0] : res } catch { return undefined } }
