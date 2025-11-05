@@ -1,8 +1,0 @@
-name: Login por Deep Link
-tags: [mobile, deeplink]
-context: { target: android, device: "Pixel 8", appId: "com.seuapp", deeplink: "seuapp://login?token={{token_login}}" }
-variables: { usuario: "maria@example.com" }
-steps:
-  - Gere um token de acesso e salve como "token_login"
-  - Abra o deep link configurado no contexto
-  - Aguarde até ver "Login"

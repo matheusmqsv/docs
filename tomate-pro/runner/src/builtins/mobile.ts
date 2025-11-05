@@ -1,1 +1,0 @@
-export async function openDeepLink(driver: any, url: string){ if (!url) throw new Error('Deep link vazio'); if (driver.openDeepLink) return driver.openDeepLink(url); if (driver.open) return driver.open(url); throw new Error('Driver não suporta deep link') }
